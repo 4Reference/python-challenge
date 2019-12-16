@@ -64,11 +64,11 @@ with open(budgetData, newline="", encoding="utf-8") as csvfile:
 
   # The greatest increase in profits (date and amount) over the entire period *+1 accounts for difference in rows
     maxDiff = max(difflist)
-    maxDiffPos = difflist.index(max(difflist))+1
+    maxDiffPos = difflist.index(maxDiff)+1
     
   # The greatest decrease in losses (date and amount) over the entire period *+1 accounts for difference in rows
     minDiff = min(difflist)
-    minDiffPos = difflist.index(min(difflist))+1
+    minDiffPos = difflist.index(minDiff)+1
 
 # In addition, your final script should both print the analysis to the terminal and export a text file with the results.
   # Print the results to terminal
