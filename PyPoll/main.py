@@ -81,7 +81,7 @@ with open(pollData, newline="", encoding="utf-8") as csvfile:
     print(f"Winner: {candilist[winner]}")
     print("----------------------------")
 
-  # Print the results to "PyBank.txt" file
+  # Print the results to "PyPoll.txt" file
     print("Election Results", file=open("PyPoll.txt", "a"))
     print("----------------------------", file=open("PyPoll.txt", "a"))
     print(f"Total Votes: {row_count:,}", file=open("PyPoll.txt", "a"))
