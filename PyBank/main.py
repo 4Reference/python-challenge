@@ -77,8 +77,8 @@ with open(budgetData, newline="", encoding="utf-8") as csvfile:
     print(f"Total Months: {row_count}")
     print(f"Total: ${total:,}")
     print(f"Average Change: ${avgChange:,}")
-    print(f"Greatest Increase in Profits: {data[maxDiffPos][0]} ${maxDiff:,}")
-    print(f"Greatest Decrease in Profits: {data[minDiffPos][0]} ${minDiff:,}")
+    print(f"Greatest Increase in Profits: {data[maxDiffPos][0]} (${maxDiff:,})")
+    print(f"Greatest Decrease in Profits: {data[minDiffPos][0]} (${minDiff:,})")
 
   # Print the results to "PyBank.txt" file
     print("Financial Analysis", file=open("PyBank.txt", "a"))
@@ -86,5 +86,5 @@ with open(budgetData, newline="", encoding="utf-8") as csvfile:
     print(f"Total Months: {row_count}", file=open("PyBank.txt", "a"))
     print(f"Total: ${total:,}", file=open("PyBank.txt", "a"))
     print(f"Average Change: ${avgChange:,}", file=open("PyBank.txt", "a"))
-    print(f"Greatest Increase in Profits: {data[maxDiffPos][0]} ${maxDiff:,}", file=open("PyBank.txt", "a"))
-    print(f"Greatest Decrease in Profits: {data[minDiffPos][0]} ${minDiff:,}", file=open("PyBank.txt", "a"))
+    print(f"Greatest Increase in Profits: {data[maxDiffPos][0]} (${maxDiff:,})", file=open("PyBank.txt", "a"))
+    print(f"Greatest Decrease in Profits: {data[minDiffPos][0]} (${minDiff:,})", file=open("PyBank.txt", "a"))
