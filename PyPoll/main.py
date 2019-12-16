@@ -63,7 +63,7 @@ with open(pollData, newline="", encoding="utf-8") as csvfile:
     for j in range (0,candicount):
         name = candilist[j]
         votes.append(tally.count(name))
-        vprct = round((int(votes[j])/row_count)*100,3)
+        vprct = votes[j]/row_count
         percentage.append(vprct)
 
   # The winner of the election based on popular vote.
@@ -76,7 +76,7 @@ with open(pollData, newline="", encoding="utf-8") as csvfile:
     print(f"Total Votes: {row_count:,}")
     print("----------------------------")
     for k in range (0,candicount): 
-        print(f"{candilist[k]}: {percentage[k]}00% ({votes[k]:,})")
+        print(f"{candilist[k]}: {percentage[k]:.3%} ({votes[k]:,})")
     print("----------------------------")
     print(f"Winner: {candilist[winner]}")
     print("----------------------------")
@@ -87,7 +87,7 @@ with open(pollData, newline="", encoding="utf-8") as csvfile:
     print(f"Total Votes: {row_count:,}", file=open("PyPoll.txt", "a"))
     print("----------------------------", file=open("PyPoll.txt", "a"))
     for k in range (0,candicount): 
-        print(f"{candilist[k]}: {percentage[k]}00% ({votes[k]:,})", file=open("PyPoll.txt", "a"))
+        print(f"{candilist[k]}: {percentage[k]:.3%} ({votes[k]:,})", file=open("PyPoll.txt", "a"))
     print("----------------------------", file=open("PyPoll.txt", "a"))
     print(f"Winner: {candilist[winner]}", file=open("PyPoll.txt", "a"))
     print("----------------------------", file=open("PyPoll.txt", "a"))
