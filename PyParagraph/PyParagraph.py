@@ -1,11 +1,11 @@
+#
 import os
-import re
-
+# initialize lists
 wordlist=[]
 sentlist=[]
-
+# select source file
 txtfile = os.path.join(".","raw_data","paragraph_2.txt")
-
+# get and clean data
 with open(txtfile, 'r') as file:
     for line in file:
         line = line.rstrip()
@@ -13,8 +13,7 @@ with open(txtfile, 'r') as file:
         sentlist += line.split(". ")
         while("" in sentlist) : 
             sentlist.remove("") 
-
-    print(sentlist)
+# set values for avg calc later
     wordlistlen = len(wordlist)
     sentlistlen = len(sentlist)
     # Approximate letter count (per word)
@@ -25,7 +24,7 @@ with open(txtfile, 'r') as file:
         templist = sentlist[i]
         sentlen = sentlen+len(templist.split())
     avgsentlen = round(sentlen/sentlistlen,1)
-
+#Print Results
 print("Paragraph Analysis")
 print("-----------------")
 print(f"Approximate Word Count: {len(wordlist)}")

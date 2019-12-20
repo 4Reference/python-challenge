@@ -111,6 +111,7 @@ with open(bossData, newline="", encoding="utf-8") as csvfile:
 # Set new headers
     headers = ['Emp ID','Last Name','First Name','DOB','SSN','State']
     newData.append(headers)
+# Manipulate the data
     for i in range(1,row_count):
         fullname = str(data[i][1])
         fullname = list(fullname.split())
@@ -124,7 +125,7 @@ with open(bossData, newline="", encoding="utf-8") as csvfile:
         stateabv = us_state_abbrev[state]
         templist = [data[i][0],firstname,lastname,DOB,hidssn,stateabv]
         newData.append(templist)
-
+# Creates new file to output data while preserving original data
 with open(newBossData, 'w+',newline="", encoding="utf-8") as csvfile2:
     csvwriter = csv.writer(csvfile2, delimiter=",")
     row_count2 = len(newData)
